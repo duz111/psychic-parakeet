@@ -1,7 +1,7 @@
 import pygame
 import random
 import os
-import time
+
 
 pygame.init()
 pygame.display.set_caption('井字棋')
