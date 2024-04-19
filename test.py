@@ -73,11 +73,7 @@ FramerRTU.crc16_table = FramerRTU.generate_crc16_table()
 # print(my_string)  # 输出: 'Hello,World'
 
 
-# hex_string = '01033B000002'#0xc92f
-
-# string_list=hex_string.split(',')
-# print(string_list)   
-
+# hex_string = '01033B000002'#0xc92f 
 
 # hex_data = bytes.fromhex(hex_string)
 # crc_value = FramerRTU.compute_CRC(hex_data)
@@ -97,21 +93,6 @@ crc_value = FramerRTU.compute_CRC(hex_data)
 hex_value = hex(crc_value)
 print(hex_value)   
 
-# hex_data = bytes.fromhex(data.hex())
-
-# # 计算 CRC，传入的参数为字节串
-# crc_value = FramerRTU.compute_CRC(hex_data)
-
-# # 将 CRC 值转换为十六进制字符串
-# hex_value = hex(crc_value)
-
-# print(hex_value)
-
 # 关闭串口
 ser1.close()
 ser2.close()
-
-# crc_value = FramerRTU.compute_CRC(data2[:-2])
-# # 将 CRC 值转换为十六进制字符串
-# hex_value = hex(crc_value)
-# print(hex_value)
