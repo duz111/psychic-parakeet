@@ -33,7 +33,7 @@ class MemoryGame:
         self.ending_rects = [pygame.Rect(self.ending_rect)]
         self.board = [' ' for i in range(16)]
 
-    #矩形区域显示
+    #文本显示
     def render_text(self,text,colors,position):
         text_name = self.font.render(text, True, colors)
         self.screen.blit(text_name, position)
@@ -41,10 +41,8 @@ class MemoryGame:
     #等待时间
     def wait_time(self,times=3):
         for i in range(times):
-            text = 'Time : {0}'.format(times - i)
-            textTime = self.font.render(text, True, self.black)
             pygame.draw.rect(self.screen,self.white,self.time_rect)
-            self.screen.blit(textTime, (325, 20))
+            self.render_text('Time : {0}'.format(times - i),self.black,(325, 20))
             pygame.display.flip()
             time.sleep(1)
     
@@ -89,8 +87,7 @@ class MemoryGame:
     #显示点击次数
     def click_display(self):
         pygame.draw.rect(self.screen, self.backgroud, (115, 5, 80, 35))#覆盖点击区域
-        textImage = self.font.render('Your score: {}'.format(self.user_click), True, self.blue)
-        self.screen.blit(textImage, (5, 5))
+        self.render_text('Your score: {}'.format(self.user_click), self.blue, (5, 5))
         pygame.display.update((0, 0, 200, 50))#click text
 
     #重新初始化
